@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personale Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            justify-content: flex-end;
+            background-color: #333;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+        /* Footer styles */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Main content styles - aligned to top and left */
+        .main-content {
+            margin: 250px auto 0 200px;
+            width: 70%; /* Adjusted width to make space for the image */
+            text-align: left;
+            display: inline-block; /* To allow for floating image */
+        }
+
+        /* Image styles */
+        .main-content img {
+            position: relative;
+            max-width: 25%;
+            margin-left:700px;/* Spacing between the text and image */
+            margin-top: -200px; /* Moves the image higher */
+            top: -50px; /* Moves the image further up */
+            right: -50px; /* Moves the image slightly right */
+            border-radius: 10px;
+        }
+
+        /* Larger font sizes for h1 and p */
+        .main-content h1 {
+            font-size: 3em; /* Increased font size */
+            color: white; /* Text stays white */
+            background-color: #333; /* Background color for glowing */
+            padding: 10px;
+            display: inline-block;
+            border-radius: 10px;
+            position: relative;
+            animation: glow-background 1.5s ease-in-out infinite alternate;
+        }
+
+        .main-content p {
+            font-size: 1.5em; /* Increased font size */
+            color: #555;
+        }
+
+        /* Glowing background animation for 'Sri Bhagavathi' */
+        @keyframes glow-background {
+            from {
+                box-shadow: 0 0 10px #f5c842, 0 0 20px #f5c842, 0 0 30px #f5a442, 0 0 40px #f5a442, 0 0 60px #f5a442;
+            }
+            to {
+                box-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ff9933, 0 0 50px #ff9933, 0 0 70px #ff9933;
+            }
+        }
+
+        /* Explore button styles */
+        .explore-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #ff9933; /* Button color updated */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 10px #ff9933;
+        }
+
+        .explore-btn:hover {
+            background-color: #ffcc00;
+            box-shadow: 0 0 20px #ffcc00;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="file:///E:/IP%20Lab/page1.html">About Me</a>
+        <a href="file:///E:/IP%20Lab/page2.html">Education</a>
+        <a href="file:///E:/IP%20Lab/page3.html">Projects</a>
+    </div>
+
+    <!-- Main Content (aligned to top-center, text left) -->
+    <div class="main-content">
+        <h1>I'm <span class="glowing">Sri Bhagavathi</span></h1>
+        <p>Welcome to my website...</p>
+        <button class="explore-btn">Explore</button>
+
+        <!-- Added image with adjusted position -->
+        <img src="file:///E:/IP%20Lab/Images/animated-baby-tiger-gif.gif" alt="Example Image">
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        @sribhagavathi, Ph: 6369485752, Email: sribhagavathi06@gmail.com
+    </div>
+
+</body>
+</html>
