@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personale Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg,#C9E4CA 0%,#FFD7BE 100%);
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+        /* Main content styles */
+        .main-content {
+            margin: 20px auto;
+            width: 80%;
+            text-align: center;
+        }
+
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #333;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px; /* Half of width to center it */
+            border-radius: 10px; /* Rounded corners for the line */
+        }
+
+        .timeline-item {
+  position: relative;
+  background: #F7D2C4; /* Light orange background */
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(255, 165, 0, 0.5); /* Glow effect */
+  margin: 20px 0;
+  padding: 20px;
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Initially positioned slightly below */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  border: 2px solid #FFC107; /* Orange border */
+}
+.timeline-item:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1), 0 0 40px rgba(255, 165, 0, 0.8); /* Increased glow effect on hover */
+}
+
+
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 52%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-right: 52%;
+            transform: translateX(50%);
+        }
+
+        .timeline-item p {
+            margin: 0;
+        }
+
+        .timeline-item.show {
+            opacity: 1; /* Fully visible */
+            transform: translateY(0); /* Move to original position */
+        }
+
+        /* Footer styles */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .timeline-item {
+  /* ... existing styles ... */
+  animation: zoomInOut 2s infinite alternate;
+}
+
+@keyframes zoomInOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="file:///E:/IP%20Lab/Portfolio.html">Home</a>
+        <a href="file:///E:/IP%20Lab/page1.html">About Me</a>
+        <a href="file:///E:/IP%20Lab/page3.html">Projects</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Education</h1>
+
+        <!-- Timeline -->
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>March 2020</h3>
+                <p>Sree Adharsh Matriculation Hr.Sec.School-90%</p>
+            </div>
+            <div class="timeline-item">
+                <h3>March 2022</h3>
+                <p>Sree Adharsh Matriculation Hr.Sec.School-90.5%</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2022 - Present</h3>
+                <p>Dr.Mahalingam College of Engineering and Technology - 8.9 CGPA</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        @sribhagavathi, Ph: 6369485752, Email: sribhagavathi06@gmail.com
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth Scrolling
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Timeline Item Animation
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight * 0.8;
+                timelineItems.forEach(item => {
+                    const itemTop = item.getBoundingClientRect().top;
+                    if (itemTop < triggerBottom) {
+                        item.classList.add('show');
+                    } else {
+                        item.classList.remove('show');
+                    }
+                });
+            }
+
+            checkVisibility();
+            window.addEventListener('scroll', checkVisibility);
+        });
+        
+    </script>
+
+</body>
+</html>

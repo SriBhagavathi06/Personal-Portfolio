@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #555 0%, #333 100%); /* Gradient background from a lighter grey to the same color as the navbar */
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+        /* Main content styles */
+        .main-content {
+            margin: 20px auto;
+            width: 80%;
+            text-align: center;
+        }
+
+        /* About Me section styles */
+        .about-me-container {
+            position: relative;
+            margin: 40px auto; /* Adjusted to make room for heading */
+            width: 80%;
+            text-align: center; /* Center the heading within the container */
+            overflow: hidden; /* Hide any overflow */
+        }
+
+        .about-me {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for separation */
+            opacity: 0; /* Initially hidden */
+            transform: translateY(50px) translateX(-50px); /* Initially shifted down and to the left */
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transition effect */
+            position: relative;
+            z-index: 1; /* Ensure it's above other content */
+            transition-delay: 1s; /* Delay animation until heading animation is complete */
+        }
+
+        .about-me h2 {
+            color: #333; /* Dark grey for heading */
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0; /* Background color to cover underlying content */
+            padding: 0 10px;
+            font-size: 2em; /* Adjust font size as needed */
+            opacity: 0; /* Initially hidden */
+            transform: translateX(100vw) translateY(20px); /* Initially positioned off-screen to the right */
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transition effect */
+        }
+
+        .about-me p {
+            color: #444; /* Slightly lighter grey for text */
+            line-height: 1.6;
+        }
+
+        /* Footer styles */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="file:///E:/IP%20Lab/Portfolio.html">Home</a>
+        <a href="file:///E:/IP%20Lab/page2.html">Education</a>
+        <a href="file:///E:/IP%20Lab/page3.html">Projects</a>
+    </div>
+
+    <!-- About Me Section -->
+    <div id="about" class="about-me-container">
+        <h2>About Me</h2>
+        <div class="about-me">
+            <p>Hello! I'm Sri Bhagavathi, a passionate web developer with a love for creating dynamic and engaging websites. With experience in various web technologies, including HTML, CSS, JavaScript, and frameworks like React and Angular, I enjoy crafting user-friendly and visually appealing web solutions that deliver exceptional user experiences.<br><br>
+
+            I'm dedicated to staying up-to-date with the latest web development trends and best practices, ensuring my skills are always current and in-demand. My passion for web development is matched by my enthusiasm for collaboration and continuous learning.<br><br>
+            
+            With a strong foundation in problem-solving and a keen eye for detail, I excel at:<br><br>
+            
+            - Designing and developing responsive, mobile-friendly websites<br>
+            - Creating interactive and engaging user interfaces<br>
+            - Writing clean, efficient, and well-documented code<br>
+            - Troubleshooting and debugging complex issues<br>
+            - Collaborating with cross-functional teams to deliver projects on time and to specification<br><br>
+            
+            I'm excited to bring my skills and passion to a dynamic team and contribute to building innovative web solutions that make a real impact. Let's connect and explore how we can create something amazing together!</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        @sribhagavathi, Ph: 6369485752, Email: sribhagavathi06@gmail.com
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const heading = document.querySelector("h2");
+            const aboutMe = document.querySelector(".about-me");
+
+            // Animate heading
+            heading.style.opacity = 1;
+            heading.style.transform = "translateX(0) translateY(0)";
+
+            // Delay container animation until heading animation completes
+            setTimeout(function() {
+                aboutMe.style.opacity = 1;
+                aboutMe.style.transform = "translateY(0) translateX(0)";
+            }, 1000); // Matches transition duration of heading
+        });
+    </script>
+
+</body>
+</html>

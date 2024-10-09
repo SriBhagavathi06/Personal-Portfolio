@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffcc00, #ff9900); /* Attractive gradient background */
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+
+        .navbar a:hover {
+            background-color: #666;
+            border-radius: 4px;
+        }
+
+        /* Main content styles */
+        .content {
+            padding: 40px; /* Increased padding for larger content area */
+            max-width: 1200px; /* Optional: set a max width for the content */
+            margin: 120px auto; /* Center the content */
+            background-color: #fff; /* White background for content area */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better separation */
+            border-radius: 8px; /* Optional: rounded corners */
+            position: relative; /* Position relative for glowing effect */
+            overflow: hidden; /* Hide overflow to ensure glow effect is contained */
+        }
+
+        /* Glowing border effect */
+        .content::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: calc(100% + 30px);
+            height: calc(100% + 30px);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(18, 18, 18, 0.7); /* Adjusted size and color for better visibility */
+            z-index: -1;
+            animation: rotateGlow 10s linear infinite; /* Rotate animation */
+        }
+
+        /* Rotating glow animation */
+        @keyframes rotateGlow {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Section styles */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section button {
+            display: block;
+            width: 100%;
+            background-color: #007bff; /* Button background color */
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .section button:hover {
+            background-color: #0056b3; /* Darker button color on hover */
+        }
+
+        .section .details {
+            display: none;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        /* Footer styles */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #444;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="file:///E:/IP%20Lab/Portfolio.html">Home</a>
+        <a href="file:///E:/IP%20Lab/page1.html">About Me</a>
+        <a href="file:///E:/IP%20Lab/page2.html">Education</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+
+        <!-- Projects Completed Section -->
+        <div class="section">
+            <button onclick="toggleDetails('projectsDetails')">Projects Completed</button>
+            <div id="projectsDetails" class="details">
+                <ul>
+                    <li>MCET Planner - HTML5, CSS3, PHP, JS, MySQL</li>
+                    <li>Personal Portfolio Website - HTML, CSS, and JavaScript</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Certificates Earned Section -->
+        <div class="section">
+            <button onclick="toggleDetails('certificatesDetails')">Certificates Earned</button>
+            <div id="certificatesDetails" class="details">
+                <ul>
+                    <li>Introduction to Front End Development</li>
+                    <li>PHP and MySQL</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        @sribhagavathi, Ph: 6369485752, Email: sribhagavathi06@gmail.com
+    </div>
+
+    <!-- JavaScript for Toggle Details functionality -->
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
